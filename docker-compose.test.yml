@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  employee-search-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.test
+    container_name: employee-search-test
+    environment:
+      - PYTHONPATH=/app
+      - TESTING=true
+    volumes:
+      - ./coverage:/app/htmlcov
